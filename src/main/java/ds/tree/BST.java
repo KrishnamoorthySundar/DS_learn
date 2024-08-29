@@ -102,6 +102,10 @@ public class BST {
         bst.insert(15);
         bst.insert(1);
         //lookup
-        bst.lookup(bst,20);
+        //bst.lookup(bst,20);
+        System.out.println(bst);
+        LevelOrderTraversal.levelOrderTraversal(bst.root);
+        BreadthFirstSearch.bfs(bst.root, 20);
+        DepthFirstSearch.dfs(bst.root, 20);
     }
 }

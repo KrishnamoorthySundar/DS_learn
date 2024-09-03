@@ -1,5 +1,9 @@
 package ds.tree;
 
+import algo.traversal.BreadthFirstTraversal;
+import algo.traversal.DepthFirstTraversal;
+import algo.traversal.TraversalFactory;
+
 public class BST {
     TreeNode root;
     TreeNode current;
@@ -107,5 +111,9 @@ public class BST {
         LevelOrderTraversal.levelOrderTraversal(bst.root);
         BreadthFirstSearch.bfs(bst.root, 20);
         DepthFirstSearch.dfs(bst.root, 20);
+        BreadthFirstTraversal bft = (BreadthFirstTraversal) TraversalFactory.getTraversalFactory("BFS");
+        bft.traverseAndPrint(bst.root);
+        DepthFirstTraversal dft = (DepthFirstTraversal) TraversalFactory.getTraversalFactory("DFS");
+        dft.traverseAndPrint(bst.root);
     }
 }

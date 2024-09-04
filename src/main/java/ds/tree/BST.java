@@ -1,8 +1,10 @@
 package ds.tree;
 
-import algo.traversal.BreadthFirstTraversal;
-import algo.traversal.DepthFirstTraversal;
-import algo.traversal.TraversalFactory;
+import algo.traversal.dfsThreeOrders.InOrderTraversal;
+import algo.traversal.dfsThreeOrders.PostOrderTraversal;
+import algo.traversal.dfsThreeOrders.PreOrderTraversal;
+
+import java.util.ArrayList;
 
 public class BST {
     TreeNode root;
@@ -107,13 +109,16 @@ public class BST {
         bst.insert(1);
         //lookup
         //bst.lookup(bst,20);
-        System.out.println(bst);
-        LevelOrderTraversal.levelOrderTraversal(bst.root);
-        BreadthFirstSearch.bfs(bst.root, 20);
-        DepthFirstSearch.dfs(bst.root, 20);
-        BreadthFirstTraversal bft = (BreadthFirstTraversal) TraversalFactory.getTraversalFactory("BFS");
-        bft.traverseAndPrint(bst.root);
-        DepthFirstTraversal dft = (DepthFirstTraversal) TraversalFactory.getTraversalFactory("DFS");
-        dft.traverseAndPrint(bst.root);
+        //System.out.println(bst);
+        //LevelOrderTraversal.levelOrderTraversal(bst.root);
+        //BreadthFirstSearch.bfs(bst.root, 20);
+        //DepthFirstSearch.dfs(bst.root, 20);
+        //BreadthFirstTraversal bft = (BreadthFirstTraversal) TraversalFactory.getTraversalFactory("BFS");
+        //bft.traverseAndPrint(bst.root);
+        //DepthFirstTraversal dft = (DepthFirstTraversal) TraversalFactory.getTraversalFactory("DFS");
+        //dft.traverseAndPrint(bst.root);
+        System.out.println(InOrderTraversal.inOrderTraversal(bst.root, new ArrayList<>()));
+        System.out.println(PreOrderTraversal.preOrderTraversal(bst.root, new ArrayList<>()));
+        System.out.println(PostOrderTraversal.postOrderTraversal(bst.root, new ArrayList<>()));
     }
 }
